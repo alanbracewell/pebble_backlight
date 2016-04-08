@@ -743,6 +743,19 @@ static void click_config_provider(void *context) {
   window_single_click_subscribe(BUTTON_ID_DOWN, down_click_handler);
 }
 
+static void change_light(){ //whole function just turns light on or off
+   //AJB changes
+  if(app_worker_is_running()){
+	    app_worker_kill();
+      vibes_double_pulse();
+	} else {
+	    app_worker_launch();
+      vibes_short_pulse(); 
+	} 
+  
+  window_stack_pop_all(true); //AJB quits app
+}
+
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
 
