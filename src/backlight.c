@@ -771,6 +771,8 @@ static void window_load(Window *window) {
   text_layer_set_text(text_layer, initial_text);
   text_layer_set_overflow_mode(text_layer, GTextOverflowModeWordWrap);
   layer_add_child(window_layer, text_layer_get_layer(text_layer));
+  
+  change_light(); //AJB launches light on/off on startup
 }
 
 static void window_unload(Window *window) {
