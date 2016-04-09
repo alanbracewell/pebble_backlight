@@ -102,11 +102,11 @@ handle_accel(AccelData *data, uint32_t num_samples)
       } 
    
       
-      if(data[i].x > 900 && data[i].y > 0) { //watch has been put down to your side
+      if(data[i].x > 600) { //watch has been put down to your side
             watch_away = 0;
             away_value_added = false;
       }
-      if(data[i].x < 800) {watch_away++;};  
+      if(data[i].x < 500) {watch_away++;};  
       
       if(count >= 11){count = 0;} 
       
