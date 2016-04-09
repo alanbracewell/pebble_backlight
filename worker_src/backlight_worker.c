@@ -110,10 +110,10 @@ handle_accel(AccelData *data, uint32_t num_samples)
       
       if(count >= 11){count = 0;} 
       
-      if(watch_away < 20){ //watch is away so now we have 20 tries to look at watch
+      if(watch_away < 10){ //watch is away so now we have 10 tries to look at watch
             if (data[i].x < X_SIDE_HIGH && data[i].x > X_SIDE_LOW &&
             data[i].y > Y_SIDE_LOW && data[i].y < Y_SIDE_HIGH && away_value_added == false) { 
-              count = count + 5;
+              count = count + 9;
               //force it to have close data
               lastx = data[i].x;
               lasty = data[i].y;
